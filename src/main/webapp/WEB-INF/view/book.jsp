@@ -72,7 +72,7 @@
 			</tr>
 			<tr>
 				<td>Author Name:</td>
-				<td><form:input path="authors" /></td>
+				<td><form:input path="authors[0]" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><input type="reset"

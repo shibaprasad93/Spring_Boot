@@ -41,7 +41,7 @@
 					<td><c:out value="${model.bookName}" /></td>
 					<td><c:out value="${model.price}" /></td>
 					<td><c:out value="${model.publication}" /></td>
-					<td><c:out value="${model.authors}" /></td>
+					<td><c:out value="${model.authors[0]}" /></td>
 					<td><c:out value="${model.image}" /></td>
 				</tr>
 			</c:forEach>

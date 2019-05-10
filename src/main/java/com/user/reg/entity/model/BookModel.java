@@ -1,6 +1,8 @@
 package com.user.reg.entity.model;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -58,8 +60,8 @@ public class BookModel {
 	public Set<Author> getAuthors() {
 		return authors;
 	}
-	public void setAuthors(Set<Author> authors) {
-		this.authors = authors;
+	public void setAuthors(String authors) {
+		this.authors =new HashSet(Arrays.asList(authors.split(",")));
 	}
 	
 	
