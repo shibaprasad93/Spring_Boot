@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Wel Come To Our Page
+	<h1>${errMsg}</h1>
 </body>
 </html>

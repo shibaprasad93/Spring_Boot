@@ -15,7 +15,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping(value = "/login",method = RequestMethod.GET)
+	@RequestMapping(value = "/user",method = RequestMethod.GET)
 	public String registration(Model model) {
 		System.out.println("Inside Login method");
 		model.addAttribute("userForm", new User());
@@ -28,7 +28,7 @@ public class UserController {
 
 		userService.save(userForm);
 
-		return "welcome";
+		return "registrationSucess";
 	}
 
 }
