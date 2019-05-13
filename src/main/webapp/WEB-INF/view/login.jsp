@@ -1,20 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+    pageEncoding="ISO-8859-1"%>
+     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
+<jsp:include page="header.jsp"></jsp:include>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>LogIn Page</title>
 </head>
-<style>
-body {font-family: Arial, Helvetica, sans-serif; background: cyan;}
-form {border: 3px solid #f1f1f1;}
+<body>
+	<style>
+body {
+	font-family: Arial, Helvetica,
+	sans-serif;
+	}
+	* {box-sizing: border-box}
+form {
+	border: 3px; 
+	solide: #f1f1f1;
+}
 
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+img.avatar {
+  width: 10%;
+  border-radius: 25%;
+}
+
+.container{
+	text-align: center;
+}
 input[type=text], input[type=password] {
-  width: 100%;
+  width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -29,7 +48,8 @@ button {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 10%;
+  text-align:  center;
 }
 
 button:hover {
@@ -41,66 +61,36 @@ button:hover {
   padding: 10px 18px;
   background-color: #f44336;
 }
+	</style>
 
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
+	<h2 align="center">Login Form</h2>
 
-img.avatar {
-  width: 15%;
-  border-radius: 20%;
-}
-
-.container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
-</style>
-</head>
-<body>
-
-<h2>Login Form</h2>
-
-<form action="/action_page.php">
+<form:form method="POST" action="/dologin"
+		modelAttribute="login" style="border:1px solid #ccc">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-        
-    <button type="submit">Login</button>
+    <form:input path="username"/><br>
+    
+     <label for="psw"><b>Password</b></label>
+     <form:input path="password"/><br> 
+      
+    <button type="submit">Login</button><br>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+    </label><br>
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
+  <div class="container">
     <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+    <span class="psw"><a href="#"> Forgotpassword?</a></span>
   </div>
-</form>
-
+  ${msg}
+</form:form>
 
 </body>
+<jsp:include page="footer.jsp"></jsp:include>
 </html>

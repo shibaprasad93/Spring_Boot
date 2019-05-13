@@ -64,10 +64,10 @@ body {
 <div class="header">
   <a href="#" class="logo">REGISTRATION</a>
   <div class="header-right">
-    <a class="active" href="#home">Home</a>
-    <a href="signup.html">Sign Up</a>
-    <a href="#login">Login</a>
-    <a href="#welcome">Welcome</a>
+    <a class="active" href="home">Home</a>
+    <a href="/registration">Sign Up</a>
+    <a href="/login">Login</a>
+    <a href="/welcome">Welcome</a>
   </div>
 </div>
 </body>
