@@ -17,7 +17,7 @@ import com.user.reg.service.UserService;
 public class UserController {
 	@Autowired
 	private UserService userService;
-	 @GetMapping("/home")
+	 @GetMapping("/")
     public String home(Model model) {
 		return "home";
 		
@@ -34,15 +34,13 @@ public class UserController {
 		
 
 		boolean isSaves=userService.save(userForm);
-		//userForm=null;
-		//model.addAttribute("register", userForm);
 		if (isSaves) {
 			
 			
-			attribute.addFlashAttribute("msg", "Registration scucessful");
+			attribute.addFlashAttribute("sucess", "Registration scucessful");
 		}
 		else {
-			attribute.addFlashAttribute("msg", "Registration failed");
+			attribute.addFlashAttribute("failure", "Registration failed");
 		}
 
 		return "redirect:/registration";
@@ -57,7 +55,6 @@ public class UserController {
 	@PostMapping("/dologin")
 	public String doLogin(@ModelAttribute("login") LoginModel login,Model model,RedirectAttributes att) {
 	String msg=	userService.findByUsername(login);
-//	model.addAttribute("msg",msg);
 	if (msg.equalsIgnoreCase("valid creadentials")) {
 		return "welcome";
 	}
